@@ -11,6 +11,7 @@ Note:Dont modify original string Neglect Spaces at the right end and at left end
 #include <stdlib.h>
 
 char * get_last_word(char * str){
+	int n = 0;
 
 	return NULL;
 }

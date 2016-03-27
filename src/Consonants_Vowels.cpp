@@ -20,7 +20,36 @@ NOTES: Don't create new string , Dont return anything ,you have been given two p
 #include <stddef.h>
 
 
-void count_vowels_and_consonants(char *str,int *consonants, int *vowels){
-
-
+void count_vowels_and_consonants(char *str, int *consonants, int *vowels){
+	int s=0,  k = 0, v = 0;
+	if (str == "" || str==NULL)
+	{
+		v = 0;
+		k = 0;
+	}
+	else
+	{
+		while (str[s] != '\0')
+		{
+			if (str[s] == 'a' || str[s] == 'e' || str[s] == 'i' || str[s] == 'o' || str[s] == 'u' || str[s] == 'A' || str[s] == 'E' || str[s] == 'I' || str[s] == 'O' || str[s] == 'U')
+			{
+				v++;
+				s++;
+			}
+			else if (str[s] == '.' || str[s] == '?' || str[s] == '!' || str[s] == '@' || str[s] == '#' || str[s] == '&' || 
+				str[s] == '*' || str[s] == '^' || str[s] == '(' || str[s] == ')' || str[s] == ' ' || str[s] == '0' || str[s] == '1'
+				|| str[s] == '2' || str[s] == '3' || str[s] == '4' || str[s] == '5' || str[s] == '6' || str[s] == '7' || str[s] == '8' || str[s] == '9' )
+			{
+				s++;
+			}
+			else
+			{
+				k++;
+				s++;
+			}
+		}
+	}
+	*consonants = k;
+	*vowels = v;
 }
+			
