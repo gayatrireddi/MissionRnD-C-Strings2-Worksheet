@@ -18,21 +18,23 @@ original String
 #include <stdlib.h>
 
 char * get_sub_string(char *str, int i, int j){
+	char *str1;
+	int k = 0, n = 0, l = 0;
 	if (str == NULL || j < i)
 		return NULL;
-	int k, n = 0;
-	char *str1;
-	while (str != NULL)
+	
+	str1 = (char*)malloc(sizeof(char *)*(j - i + 2) );
+	while (str[k] != '\0')
 	{
-		n++;
+		n++; k++;
 	}
-	for (k = 0; k < n; k++)
+	for (k = 0; k <= n; k++)
 	{
-		if (k >= i&&k <= j)
+		if (k >= i && k <= j)
 		{
-			str1[n] = str[k];
-			n++;
+			str1[l] = str[k];
+			l++;
 		}
-	}
+	}str1[l] = '\0';
 	return str1;
 }
